@@ -23,8 +23,8 @@ public class LoadData{
 		
 		loadDataset("dataset/titanic.arff");
 		
-		// Instances myDataset = creteDataset();
-		// saveDataset(myDataset, true);
+		Instances myDataset = creteDataset();
+		saveDataset(myDataset, true);
 	}
 	
 	public static Instances loadDataset(String dataset) throws Exception{
@@ -65,6 +65,8 @@ public class LoadData{
 		
 		// 2. create dataset
 		Instances data = new Instances("Runtime dataset", attributes, 0);
+		
+		System.out.println("numAttributes: " + data.numAttributes());
 		
 		// add first instance
 		double[] vals = new double[data.numAttributes()];
